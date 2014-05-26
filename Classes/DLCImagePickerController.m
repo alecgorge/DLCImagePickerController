@@ -488,7 +488,8 @@
         UIImage *currentFilteredVideoFrame = [processUpTo imageFromCurrentFramebufferWithOrientation:staticPictureOriginalOrientation];
 
         NSDictionary *info = [[NSDictionary alloc] initWithObjectsAndKeys:
-                              UIImageJPEGRepresentation(currentFilteredVideoFrame, self.outputJPEGQuality), @"data", nil];
+                              UIImageJPEGRepresentation(currentFilteredVideoFrame, self.outputJPEGQuality), @"data",
+                              currentFilteredVideoFrame, @"image", nil];
         [self.delegate imagePickerController:self didFinishPickingMediaWithInfo:info];
     }
 }
